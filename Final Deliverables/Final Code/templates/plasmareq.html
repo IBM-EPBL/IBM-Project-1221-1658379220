@@ -1,0 +1,92 @@
+<body>
+   <br>
+   <center><h4>PLASMA RECIPIENT REQUESTS</h4></center>
+   <br>
+   <center><p>{{msg}}</p></center>
+<br>
+<center>
+    <table border = 1 cellpadding = "5">
+        <thead>
+           <td>Name</td>
+           <td>Age</td>
+           <td>Gender</td>
+           <td>Mobile No</td>
+           <td>ID Proof</td>
+           <td>Address</td>
+           <td>Plasma Volume</td>
+           <td>Delete</td>
+        </thead>
+        {% for row in recipient %}
+           <tr>
+              <td>{{row["NAME"]}}</td>
+              <td>{{row["AGE"]}}</td>
+              <td>{{row["GENDER"]}}</td>
+              <td>{{row['MNUMB']}}</td>	
+              <td>{{row['PROOF']}}</td>
+              <td>{{row['ADDRESS']}}</td>
+              <td>{{row['PLASMA']}}</td>
+              <td><a href="/delete/{{row['NAME']}}">Delete</a></td>	
+           </tr>
+        {% endfor %}
+     </table>
+</center>
+<a href="/admin" class="submit">&laquo; Go Back</a> 
+</body>
+<style>
+   body{
+      /* background-image: url('https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/Auepal.jpg'); */
+      background: #5b0d12;
+      
+   }
+   thead{
+      color: #fc5987;
+   }
+   table{
+      color:rgb(255, 255, 255);
+      border-color: aquamarine;
+      border-radius: 12px;
+      border-width: 2px;
+      font-weight: bold;
+   }
+   h4{
+      color:goldenrod;
+      font-size: larger;
+      -webkit-text-stroke: 0.5px;
+      -webkit-text-stroke-color: rgb(255, 255, 255);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+   a {
+      margin-left: 15px;
+      text-decoration: none;
+      display:inline-block;
+      padding: 8px 16px;
+   }
+
+   a:hover {
+  background-color: rgb(17, 173, 212);
+  color:black;
+   }
+
+   .previous {
+  background-color: rgb(255, 255, 255);
+  color: black;
+   }
+
+   .submit {
+   margin-top: 40px;
+  width: 5%;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  /* box-shadow: 0px 4px 20px 0px #49c628a6; */
+  background-image: linear-gradient(135deg, #fc5987 10%, #e91b1b 100%);
+  color: #ffffff;
+}
+
+</style>
+
+
+
